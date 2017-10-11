@@ -1,0 +1,51 @@
+{% extends 'layout.html'%}
+
+    {% block body %}
+
+
+<!doctype html>
+<html>
+   <body>
+
+    <h1 align = "center"> Free Workshop List</h1>
+   
+      <table border = 1>
+         <thead>
+            <td>Sr.No</td>
+            <td>College Name</td>
+            <td>Seminar Conducted Date</td>
+            <td>HOD</td>
+            <td>Department</td>
+            <td>Expectation</td>
+            <td>Mail Sent</td>
+            <td>Reply</td>
+            <td>Follow Up 1</td>
+            <td>Remark 1</td>
+            <td>Follow Up 1</td>
+            <td>Remark 1</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["srno"]}}</td>
+               <td>{{row["collegename"]}}</td>
+               <td> {{ row["seminardate"]}}</td>
+               <td>{{row['hod']}}</td>
+               <td>{{row["department"]}}</td>
+               <td>{{row["expectation"]}}</td>
+               <td> {{ row["mail"]}}</td>
+               <td>{{row['reply']}}</td>
+               <td> {{ row["followup1"]}}</td>
+               <td>{{row['remark1']}}</td>
+               <td> {{ row["followup2"]}}</td>
+               <td>{{row['remark2']}}</td>		
+            </tr>
+         {% endfor %}
+      </table></br>
+      
+      <a href = "/">Go back to home page</a>
+      
+   </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'layout.html'%}
+
+    {% block body %}
+
+
+
+<!doctype html>
+<html>
+   <body>
+
+      <h1 align = "center"> Upcoming Workshop List</h1>
+   
+      <table border = 1>
+         <thead>
+           
+            <td>College Name</td>
+            <td>contact</td>
+            <td>date </td>
+            <td>department</td>
+            <td>duration</td>
+            <td>workshop Topic</td>
+            <td>follow Up 1</td>
+            <td>remark 1</td>
+            <td>follow Up 2</td>
+            <td>remark 2</td>
+            
+           
+         </thead>
+ 
+         {% for row in rows %}
+            <tr>
+               
+               <td>{{row["name"]}}</td>
+               <td> {{ row["cont"]}}</td>
+               <td>{{row["appdate"]}}</td>
+               <td> {{ row["dept"]}}</td>
+               <td>{{row["duration"]}}</td>
+               <td> {{ row["wtopic"]}}</td>
+               <td>{{row["followup1"]}}</td>
+               <td> {{ row["remark1"]}}</td>
+               <td>{{row["followup2"]}}</td>
+               <td> {{ row["remark2"]}}</td>
+
+	
+            </tr>
+   
+         {% endfor %}
+         
+        </table></br>
+
+      <a href = "/">Go back to home page</a>
+      
+
+
+   </body>
+</html>
+
+
+{% endblock %}
